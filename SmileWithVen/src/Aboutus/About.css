@@ -1,0 +1,133 @@
+/* About.css */
+
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+     /* Light background for contrast */
+}
+/* About.css */
+
+.about-images1 {
+    flex: 0.5;
+    min-width: 250px;
+    max-width: 300px;
+    margin: 10px;
+    position: relative;
+    margin-top: 8%;
+}
+
+.about-images1 .about-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    /* Remove border-radius for rectangular look */
+    border-radius: 0;
+}
+
+/* Right side shadow */
+.about-images1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10px; /* Shadow width */
+    height: 100%;
+    width: 10px; /* Shadow width */
+    background: linear-gradient(90deg, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    z-index: 0;
+}
+
+/* Top side shadow */
+.about-images1::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Shadow height */
+    left: 0;
+    width: 100%;
+    height: 10px; /* Shadow height */
+    background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    z-index: 0;
+}
+
+/* Optional hover effect to intensify shadows */
+.about-images1:hover::after {
+    right: -15px;
+    width: 15px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3), rgba(0,0,0,0));
+}
+
+.about-images1:hover::before {
+    top: -15px;
+    height: 15px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0));
+}
+
+.about-images {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center horizontally */
+    margin: 10px;
+    
+}
+
+.about-image {
+    width: 100%; /* Will respect parent width */
+    max-width: 250px; /* Maximum size */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    object-fit: cover; /* Ensures consistent aspect ratio */
+}
+
+.about-images p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 250px;
+}
+
+.about-content {
+    flex: 2;
+    min-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.about-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-images, .about-content {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
